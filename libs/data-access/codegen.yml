@@ -1,0 +1,14 @@
+overwrite: true
+# schema: "apps/api/src/app/schema.graphql" # TODO change this when using a backend GraphQL API
+schema: "libs/data-access/src/lib/graphql/type-defs.graphql"
+generates:
+  libs/data-access/src/lib/generated/generated.tsx:
+    documents: "libs/data-access/src/lib/**/*.graphql"
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      withHooks: true
+      withComponent: false
+      withHOC: false

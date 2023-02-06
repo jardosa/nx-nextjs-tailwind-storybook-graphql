@@ -1,0 +1,20 @@
+# libs/data-access/src/lib/graphql/operations.graphql
+
+query setList {
+  allSets{
+    id
+    name
+    numParts
+    year
+  }
+}
+
+
+mutation addSet($name: String!, $year: String!, $numParts: Int!) {
+  addSet(name: $name, year: $year, numParts: $numParts) {
+    id
+    name
+    numParts
+    year
+  }
+}
